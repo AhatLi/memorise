@@ -41,6 +41,7 @@
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_hide = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
+            this.check_title = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_next
@@ -162,11 +163,22 @@
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // check_title
+            // 
+            this.check_title.AutoSize = true;
+            this.check_title.Location = new System.Drawing.Point(113, 41);
+            this.check_title.Name = "check_title";
+            this.check_title.Size = new System.Drawing.Size(128, 16);
+            this.check_title.TabIndex = 3;
+            this.check_title.Text = "설명과 이름 반대로";
+            this.check_title.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 430);
+            this.Controls.Add(this.check_title);
             this.Controls.Add(this.text_max);
             this.Controls.Add(this.text_no);
             this.Controls.Add(this.text_path);
@@ -202,6 +214,7 @@
         private System.Windows.Forms.Button btn_load;
         private System.Windows.Forms.Button btn_hide;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.CheckBox check_title;
     }
 }
 

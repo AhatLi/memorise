@@ -98,8 +98,14 @@ namespace WindowsFormsApplication1
                 page_no--;
                 text_no.Text = page_no.ToString();
                 text_goal.Visible = false;
+                
+                bool b = r.Next(100) > 20 && qlist[page_no - 1].qus != null;
+                if (check_title.Checked)
+                {
+                    b = !b;
+                }
 
-                if (r.Next(100) > 20 && qlist[page_no - 1].qus != null)
+                if (b)
                 {
                     text_qus.Text = qlist[page_no - 1].qus;
                     text_goal.Text = qlist[page_no - 1].ans;
@@ -119,8 +125,14 @@ namespace WindowsFormsApplication1
                 page_no++;
                 text_no.Text = page_no.ToString();
                 text_goal.Visible = false;
+                
+                bool b = r.Next(100) > 20 && qlist[page_no - 1].qus != null;
+                if (check_title.Checked)
+                {
+                    b = !b;
+                }
 
-                if (r.Next(100) > 20 && qlist[page_no - 1].qus != null)
+                if (b)
                 {
                     text_qus.Text = qlist[page_no - 1].qus;
                     text_goal.Text = qlist[page_no - 1].ans;
