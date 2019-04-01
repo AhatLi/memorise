@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
             {
                 page_no--;
                 text_no.Text = page_no.ToString();
-                text_ans.Visible = false;
+                text_goal.Visible = false;
 
                 if (r.Next(100) > 20 && qlist[page_no - 1].qus != null)
                 {
