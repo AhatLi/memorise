@@ -42,6 +42,8 @@
             this.btn_hide = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.check_title = new System.Windows.Forms.CheckBox();
+            this.btn_X = new System.Windows.Forms.Button();
+            this.btn_init = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_next
@@ -91,6 +93,7 @@
             this.text_goal.ReadOnly = true;
             this.text_goal.Size = new System.Drawing.Size(742, 106);
             this.text_goal.TabIndex = 1;
+            this.text_goal.Click += new System.EventHandler(this.text_goal_TextChanged);
             // 
             // text_ans
             // 
@@ -173,6 +176,26 @@
             this.check_title.Text = "설명과 이름 반대로";
             this.check_title.UseVisualStyleBackColor = true;
             // 
+            // btn_X
+            // 
+            this.btn_X.Location = new System.Drawing.Point(560, 39);
+            this.btn_X.Name = "btn_X";
+            this.btn_X.Size = new System.Drawing.Size(81, 21);
+            this.btn_X.TabIndex = 0;
+            this.btn_X.Text = "틀린문제";
+            this.btn_X.UseVisualStyleBackColor = true;
+            this.btn_X.Click += new System.EventHandler(this.btn_X_Click);
+            // 
+            // btn_init
+            // 
+            this.btn_init.Location = new System.Drawing.Point(473, 39);
+            this.btn_init.Name = "btn_init";
+            this.btn_init.Size = new System.Drawing.Size(81, 21);
+            this.btn_init.TabIndex = 0;
+            this.btn_init.Text = "초기화";
+            this.btn_init.UseVisualStyleBackColor = true;
+            this.btn_init.Click += new System.EventHandler(this.btn_init_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -189,6 +212,8 @@
             this.Controls.Add(this.btn_check);
             this.Controls.Add(this.btn_prev);
             this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.btn_init);
+            this.Controls.Add(this.btn_X);
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.btn_hide);
             this.Controls.Add(this.btn_next);
@@ -215,6 +240,8 @@
         private System.Windows.Forms.Button btn_hide;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.CheckBox check_title;
+        private System.Windows.Forms.Button btn_X;
+        private System.Windows.Forms.Button btn_init;
     }
 }
 

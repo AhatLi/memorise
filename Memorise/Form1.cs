@@ -51,6 +51,11 @@ namespace WindowsFormsApplication1
                 {
                     if (line == "")
                     {
+                        if(q == null || (q.ans == "" && q.qus == ""))
+                        {
+                            continue;
+                        }
+
                         j = 0;
                         qlist.Add(q);
 
@@ -68,6 +73,7 @@ namespace WindowsFormsApplication1
                         q.qus += line;
                     }
                 }
+                file.Close();
 
                 text_min.Text = "0";
                 text_no.Text = "0";
@@ -77,7 +83,7 @@ namespace WindowsFormsApplication1
                 page_no = 0;
                 page_max = qlist.Count;
 
-                for (int i = 0; i < qlist.Count; i++) 
+                for (int i = 0; i < qlist.Count; i++)
                 {
                     question temp = qlist[i];
                     int randomIndex = r.Next(page_max);
@@ -98,7 +104,7 @@ namespace WindowsFormsApplication1
                 page_no--;
                 text_no.Text = page_no.ToString();
                 text_goal.Visible = false;
-                
+
                 bool b = r.Next(100) > 20 && qlist[page_no - 1].qus != null;
                 if (check_title.Checked)
                 {
@@ -125,8 +131,8 @@ namespace WindowsFormsApplication1
                 page_no++;
                 text_no.Text = page_no.ToString();
                 text_goal.Visible = false;
-                
-                bool b = r.Next(100) > 20 && qlist[page_no - 1].qus != null;
+
+                bool b = r.Next(100) > 10 && qlist[page_no - 1].qus != null;
                 if (check_title.Checked)
                 {
                     b = !b;
@@ -153,6 +159,41 @@ namespace WindowsFormsApplication1
         private void btn_check_Click(object sender, EventArgs e)
         {
             text_goal.Visible = true;
+        }
+
+        private void text_goal_TextChanged(object sender, EventArgs e)
+        {
+            if(text_goal.Visible == true)
+            {
+                text_goal.Visible = false;
+            }
+            else
+            {
+                text_goal.Visible = true;
+            }
+        }
+
+        private void btn_X_Click(object sender, EventArgs e)
+        {
+            System.IO.StreamWriter file = new System.IO.StreamWriter("X.txt", true);
+
+            file.WriteLine(qlist[page_no - 1].ans);
+            file.WriteLine(qlist[page_no - 1].qus);
+            file.WriteLine("");
+
+            file.Close();
+        }
+
+        private void btn_init_Click(object sender, EventArgs e)
+        {
+            qlist.Clear();
+            page_no = 0;
+            page_max = 0;
+
+            text_qus.Text = "";
+            text_goal.Text = "";
+            text_max.Text = "0";
+            text_no.Text = "";
         }
     }
 
